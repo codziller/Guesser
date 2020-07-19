@@ -1,0 +1,21 @@
+$primary-color: conic-gradient(
+  from 180deg,
+  #060f2b 0%,
+  #02050f 53%,
+  #071232 100%
+);
+$secondary-color: linear-gradient(
+  180deg,
+  #ff7144 0%,
+  #ff5a26 50%,
+  #ff7144 100%
+);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+}

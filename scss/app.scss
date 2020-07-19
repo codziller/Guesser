@@ -1,0 +1,21 @@
+@import "config";
+body {
+  background: $primary-color;
+  height: 100vh;
+}
+main {
+  height: 100%;
+  color: #ffffff;
+}
+button {
+  background: none;
+  border: none;
+  color: #ffffff;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+ul {
+  list-style-type: none;
+}
