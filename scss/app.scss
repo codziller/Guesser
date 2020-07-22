@@ -1,11 +1,24 @@
 @import "config";
+@mixin flexCenter($direction, $justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
 body {
+  height: 100%;
   background: $primary-color;
-  height: 100vh;
+  background-repeat: no-repeat;
 }
 main {
-  height: 100%;
+  height: 100vh;
+
+  width: 90%;
   color: #ffffff;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 button {
   background: none;
@@ -19,3 +32,300 @@ a {
 ul {
   list-style-type: none;
 }
+h1,
+h2 {
+  text-align: center;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*******Header styles*******/
+.menu_button_div {
+  @include flexCenter(row, flex-start, center);
+  height: fit-content;
+}
+.menu_button {
+  height: 35px;
+  background: linear-gradient(180deg, #ff7144 0%, #ff5a26 50%, #ff7144 100%);
+  border-radius: 10px;
+  width: 6em;
+  z-index: 2;
+  margin-right: 0.3em;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.menu_button:hover,
+.menu_button:active,
+.menu_button:focus {
+  opacity: 1;
+}
+.fa-angle-right {
+  transform: translateX(-30em);
+
+  animation: none;
+}
+
+.fa-angle-right_inactive {
+  color: gold;
+  font-size: 25px;
+  animation: fade-slide-down 1s 1.2s ease-in forwards,
+    pulse 2.5s 3s ease-out infinite;
+
+  opacity: 0;
+}
+
+.header {
+  @include flexCenter(column, none, none);
+  margin-top: 3vh;
+  height: auto;
+}
+.header nav {
+  @include flexCenter(row, none, none);
+}
+@keyframes fade-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: none;
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.menu_list > ul {
+  @include flexCenter(row, none, none);
+  margin-left: 0.5em;
+  padding-top: 8px;
+}
+.menu_list > ul > li {
+  margin-right: 3vw;
+}
+
+.difficulty {
+  transform: translateY(-50rem);
+  transition: transform 0.5s ease-in-out;
+  transition-delay: 0.1s;
+}
+.active_difficulty {
+  transform: none;
+}
+
+.sound {
+  transform: translateY(-50rem);
+  transition: transform 0.5s ease-in-out;
+  transition-delay: 0.05s;
+}
+.active_sound {
+  transform: none;
+}
+
+.about {
+  transform: translateY(-50rem);
+  transition: transform 0.5s ease-in-out;
+}
+.active_about {
+  transform: none;
+}
+
+.difficulty_list {
+  margin-top: 0.5em;
+  transform: translateY(-20rem);
+}
+.difficulty_list > li {
+  margin-bottom: 0.5em;
+}
+.guesser {
+  margin-top: -2em;
+}
+/*********************Home view styles****************/
+.home_page {
+  margin-top: 1em;
+
+  z-index: 1;
+}
+.home_page h2 {
+  margin-top: 1em;
+}
+.home_page p {
+  text-align: center;
+  line-height: 25px;
+}
+.begin_button {
+  height: 40px;
+  background: gold;
+  border-radius: 2em;
+  width: 30vw;
+  position: absolute;
+  bottom: 4vh;
+  right: 5vh;
+}
+.begin_button > h3 {
+  font-size: 1.5em;
+}
+/********************Ready view styles****************/
+.ready_view {
+  display: none;
+  max-height: 120vh;
+
+  z-index: 2;
+  animation: fade-in linear 1s;
+  width: 100%;
+}
+#play_button {
+  position: absolute;
+  bottom: 4vh;
+  right: 5vh;
+  height: 40px;
+  background: #22d389;
+  border-radius: 2em;
+  width: 30vw;
+}
+/********************Game view styles****************/
+.game_view {
+  display: none;
+  max-height: 120vh;
+
+  z-index: 3;
+  animation: fade-in linear 1s;
+  width: 100%;
+  margin-top: 1em;
+}
+.game_top_bar {
+  @include flexCenter(row, none, none);
+}
+.game_top_nav {
+  @include flexCenter(column, center, flex-start);
+  margin-left: auto;
+}
+#exit_button {
+  margin-bottom: 2em;
+}
+#exit_button,
+#restart_button,
+#pause_button,
+#resume_game_button,
+#restart_no,
+#restart_yes {
+  width: 7em;
+  height: 30px;
+  border-radius: 2em;
+  transition: background-color 0.3s ease-in;
+}
+#confirm_button {
+  width: 7em;
+  height: 30px;
+  border-radius: 2em;
+}
+#restart_button {
+  border: 1px solid #fff200;
+  color: #fff200;
+}
+#pause_button {
+  border: 1px solid #2254d3;
+  color: #2254d3;
+  margin-top: 0.7em;
+}
+#restart_button:hover,
+#restart_button:focus {
+  background-color: #fff200;
+  color: #7e7d7d;
+}
+#pause_button:hover,
+#pause_button:focus {
+  background-color: #2254d3;
+  color: #ffffff;
+}
+#exit_button {
+  border: 1px solid red;
+  color: red;
+}
+#exit_button:hover,
+#exit_button:focus {
+  background-color: red;
+  color: #ffffff;
+}
+.game_body {
+  margin-top: 25px;
+}
+.question {
+  margin-top: 15px;
+  text-align: center;
+  height: 25vh;
+}
+#gameTime {
+  color: #22d389;
+}
+.input_box {
+  @include flexCenter(column, none, center);
+}
+#user_input {
+  background-color: white;
+  padding: 5px;
+}
+#confirm_button,
+#resume_game_button {
+  background-color: #22d389;
+  color: #ffffff;
+}
+#resume_game_button {
+  margin-top: 20px;
+}
+#error_text {
+  color: red;
+  opacity: 0;
+}
+.game_paused_container,
+.game_restart_container,
+.game_over_container,
+.back_drop,
+.game_exit_container {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: indigo;
+}
+
+/********************Game paused view styles****************/
+/********************Game restart view styles****************/
+#restart_no,
+#restart_yes {
+  background-color: red;
+  color: #ffffff;
+  margin-right: 10px;
+}
+/********************Gameover view styles****************/
+/********************Backdrop****************/
