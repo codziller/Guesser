@@ -11,6 +11,7 @@ body {
   height: 100%;
   background: conic-gradient(from 180deg, #060f2b 0%, #02050f 53%, #071232 100%);
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 main {
