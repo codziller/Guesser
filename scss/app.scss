@@ -9,7 +9,8 @@ body {
   height: 100%;
   background: $primary-color;
   background-repeat: no-repeat;
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100vw;
 }
 main {
   height: 100vh;
