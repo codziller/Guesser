@@ -45,6 +45,10 @@ h2 {
   text-align: center;
 }
 
+input[type="text"] {
+  font-size: 16px;
+}
+
 @-webkit-keyframes fade-in {
   from {
     opacity: 0;
