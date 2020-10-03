@@ -613,7 +613,7 @@ input[type="text"] {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 15vh;
+  margin-top: 25vh;
 }
 
 .game_top_nav {

@@ -384,7 +384,7 @@ color: #363535;
 }
 .game_top_bar {
   @include flexCenter(row, none, none);
-  margin-top: 15vh;
+  margin-top: 25vh;
 }
 .game_top_nav {
   @include flexCenter(column, center, flex-start);
