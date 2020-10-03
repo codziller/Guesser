@@ -39,6 +39,9 @@ const game = {
   header: document.getElementById("header"),
   sound: document.getElementById("sound"),
   about: document.getElementById("about"),
+  about_button: document.getElementById("about_button"),
+  sound_button: document.getElementById("sound_button"),
+  close_button: document.getElementById("close_button"),
   menuButton: document.getElementById("menu_button"),
   rightCaretOne: document.getElementById("fa-angle-right-one"),
   rightCaretTwo: document.getElementById("fa-angle-right-two"),
@@ -46,6 +49,7 @@ const game = {
   home: document.getElementById("home_page"),
   begin: document.getElementById("begin_button"),
   ready_view: document.getElementById("ready_view"),
+  about_view: document.getElementById("about_view"),
   difficultySelect: document.getElementById("difficulty_select"),
   novice: document.getElementById("novice"),
   pro: document.getElementById("pro"),
@@ -115,9 +119,12 @@ const game = {
 
   displayMenuList() {
     this.menuButton.addEventListener("click", () => {
-      this.sound.classList.toggle("active_sound"),
-        this.about.classList.toggle("active_about"),
-        this.rightCaretOne.classList.toggle("fa-angle-right_inactive"),
+      this.sound_button.classList.toggle("active_sound"),
+        setTimeout(() => {
+          this.about_button.classList.toggle("active_about");
+        }, 100);
+
+      this.rightCaretOne.classList.toggle("fa-angle-right_inactive"),
         this.rightCaretTwo.classList.toggle("fa-angle-right_inactive");
     });
   },
@@ -159,12 +166,20 @@ const game = {
     clearInterval(logoTimer);
     logoTimer = null;
   },
-
+  displayAboutView() {
+    this.about_button.addEventListener("click", () => {
+      this.about_view.classList.toggle("active_about_view")
+    });
+    this.close_button.addEventListener("click", () => {
+      this.about_view.classList.toggle("active_about_view")
+    });
+  },
   displayReadyView() {
     this.begin.addEventListener("click", () => {
       this.hide(this.home), this.show(this.ready_view);
     });
   },
+
   displayGameView() {
     this.hide(this.header),
       this.hide(this.home),
@@ -564,7 +579,7 @@ const game = {
     this.styleTimer();
     this.styledLetter();
     this.displayMenuList();
-
+    this.displayAboutView();
     this.displayReadyView();
     this.displayDifficulty();
     this.start.addEventListener("click", () => {

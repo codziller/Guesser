@@ -208,16 +208,16 @@ input[type="text"] {
   transform: none;
 }
 
-.sound {
+.sound_button {
   transform: translateY(-50rem);
   transition: transform 0.5s ease-in-out;
-  transition-delay: 0.05s;
+  transition-delay: 0.5s;
 }
 .active_sound {
   transform: none;
 }
 
-.about {
+.about_button {
   transform: translateY(-50rem);
   transition: transform 0.5s ease-in-out;
 }
@@ -284,6 +284,54 @@ input[type="text"] {
 }
 .begin_button > h3 {
   font-size: 1.5em;
+}
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+.footer h6 {
+  text-align: center;
+  color: #c5b9b9;
+}
+/********************About view styles****************/
+.about_view {
+  transform: translateY(-100vh);
+  transition: transform 0.3s ease-in ;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 999999999;
+}
+.active_about_view {
+  transform: none ;
+}
+.about_view h6{
+  margin-top: 10vh;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+  font-weight: 300;
+}
+#sound_button,
+#about_button {
+  z-index: 99999;
+  border: 1px solid #2254d3;
+  margin-top: -5px !important;
+}
+#about_button {
+  margin-left: 5px;
+}
+.close-about{
+  margin: 15px 0 0 15px;
+ background-color: #ff6f4f;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  z-index: 9999999999;
 }
 /********************Ready view styles****************/
 .ready_view {
@@ -399,7 +447,9 @@ input[type="text"] {
 #restart_yes,
 #exit_no,
 #exit_yes,
-#play_again {
+#play_again,
+#sound_button,
+#about_button {
   width: 7em;
   height: 30px;
   border-radius: 2em;
