@@ -613,7 +613,6 @@ input[type="text"] {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 25vh;
 }
 
 .game_top_nav {
@@ -644,7 +643,8 @@ input[type="text"] {
 #restart_no,
 #restart_yes,
 #exit_no,
-#exit_yes, #play_again {
+#exit_yes,
+#play_again {
   width: 7em;
   height: 30px;
   border-radius: 2em;
@@ -694,7 +694,7 @@ input[type="text"] {
 }
 
 .game_body {
-  margin-top: 25px;
+  margin-top: 10vh;
 }
 
 .question {
